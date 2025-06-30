@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free PDF downloads - Access our collection of valuable PDF resources including guides, templates, and eBooks">
+    <meta name="keywords" content="PDF download, free PDF, documents, eBooks, templates, guides">
+    <meta name="author" content="PDF Resources">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="PDF Download Center | Free Resources">
+    <meta property="og:description" content="Download free PDF resources including guides, templates, and eBooks">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/images/og-image.jpg">
+    
+    <title>PDF Download Center | Free PDF Resources</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #3f37c9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --success: #4bb543;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --ad-color: #f0f2f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        /* Ad Banner */
+        .ad-banner {
+            background-color: var(--ad-color);
+            border: 1px solid var(--light-gray);
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: 8px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad-banner.horizontal {
+            width: 100%;
+        }
+
+        .ad-banner.vertical {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        /* PDF Grid */
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .pdf-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pdf-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdf-thumbnail {
+            height: 180px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .pdf-thumbnail img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .pdf-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.7;
+        }
+
+        .pdf-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .pdf-info {
+            padding: 20px;
+        }
+
+        .pdf-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .pdf-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .pdf-download-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .pdf-download-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Categories */
+        .category-filter {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 8px 15px;
+            background-color: white;
+            border: 1px solid var(--light-gray);
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .breadcrumb-item {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .breadcrumb-item a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item::after {
+            content: '/';
+            margin-left: 10px;
+            color: var(--gray);
+        }
+
+        .breadcrumb-item:last-child::after {
+            display: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 99;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .pdf-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 40px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .search-input {
+                padding: 12px 15px;
+            }
+            
+            .search-btn {
+                padding: 8px 15px;
+            }
+            
+            .pdf-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .ad-banner.vertical {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-file-pdf logo-icon"></i>
+                <span class="logo-text">PDF<span>Hub</span></span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Download Premium PDF Resources</h1>
+            <p>Access our collection of valuable PDF documents including guides, templates, eBooks and more. All resources are free to download.</p>
+            
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search for PDFs...">
+                <button class="search-btn">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">PDF Resources</li>
+            </ul>
+        </div>
+        
+        <!-- Horizontal Ad Banner -->
+        <div class="ad-banner horizontal" id="adBannerTop">
+            <!-- AdSense Ad Code will be inserted here -->
+            <div style="color: #999; font-size: 0.9rem;">Advertisement</div>
+        </div>
+        
+        <h2 class="section-title">Featured PDF Downloads</h2>
+        
+        <!-- Category Filter -->
+        <div class="category-filter">
+            <button class="category-btn active">All</button>
+            <button class="category-btn">Guides</button>
+            <button class="category-btn">Templates</button>
+            <button class="category-btn">eBooks</button>
+            <button class="category-btn">Reports</button>
+        </div>
+        
+        <!-- PDF Grid -->
+        <div class="pdf-grid" id="pdfGrid">
+            <!-- PDF cards will be dynamically inserted here -->
+        </div>
+        
+        <!-- Vertical Ad Banner -->
+        <div class="ad-banner vertical" id="adBannerSide">
+            <!-- AdSense Ad Code will be inserted here -->
+            <div style="color: #999; font-size: 0.9rem;">Advertisement</div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About PDFHub</h3>
+                    <p>PDFHub is your one-stop destination for high-quality PDF resources. We provide free downloads of valuable documents to help you in your personal and professional life.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Popular PDFs</a></li>
+                        <li><a href="#">New Uploads</a></li>
+                        <li><a href="#">Request a PDF</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Business Templates</a></li>
+                        <li><a href="#">Educational Guides</a></li>
+                        <li><a href="#">Technical Manuals</a></li>
+                        <li><a href="#">Creative Resources</a></li>
+                        <li><a href="#">Legal Documents</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates on new PDF additions.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> PDFHub. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // PDF Data - In a real app, this would come from a database
+        const pdfData = [
+            {
+                id: 1,
+                title: "Ultimate Guide to Digital Marketing",
+                category: "Guides",
+                size: "2.4 MB",
+                pages: 48,
+                downloads: 1245,
+                file: "digital-marketing-guide.pdf",
+                thumbnail: "guide-thumb.jpg",
+                description: "Comprehensive guide covering all aspects of digital marketing strategies."
+            },
+            {
+                id: 2,
+                title: "Business Plan Template Pack",
+                category: "Templates",
+                size: "3.1 MB",
+                pages: 32,
+                downloads: 892,
+                file: "business-plan-templates.pdf",
+                thumbnail: "template-thumb.jpg",
+                description: "Professional templates for creating winning business plans."
+            },
+            {
+                id: 3,
+                title: "The Psychology of Money",
+                category: "eBooks",
+                size: "5.7 MB",
+                pages: 120,
+                downloads: 2563,
+                file: "psychology-of-money.pdf",
+                thumbnail: "ebook-thumb.jpg",
+                description: "Bestselling book about money and financial decision making."
+            },
+            {
+                id: 4,
+                title: "2023 Social Media Trends Report",
+                category: "Reports",
+                size: "1.8 MB",
+                pages: 24,
+                downloads: 1532,
+                file: "social-media-trends.pdf",
+                thumbnail: "report-thumb.jpg",
+                description: "Latest trends and statistics for social media marketing."
+            },
+            {
+                id: 5,
+                title: "Resume & Cover Letter Templates",
+                category: "Templates",
+                size: "4.2 MB",
+                pages: 36,
+                downloads: 3241,
+                file: "resume-templates.pdf",
+                thumbnail: "resume-thumb.jpg",
+                description: "Professional templates to help you land your dream job."
+            }
+        ];
+
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        const pdfGrid = document.getElementById('pdfGrid');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const currentYear = document.getElementById('currentYear');
+        
+        // Set current year in footer
+        currentYear.textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            this.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Initialize PDF Grid
+        function renderPDFs(pdfs = pdfData) {
+            pdfGrid.innerHTML = '';
+            
+            if (pdfs.length === 0) {
+                pdfGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No PDFs found in this category.</p>';
+                return;
+            }
+            
+            pdfs.forEach(pdf => {
+                const pdfCard = document.createElement('div');
+                pdfCard.className = 'pdf-card';
+                pdfCard.innerHTML = `
+                    <div class="pdf-thumbnail">
+                        <i class="fas fa-file-pdf pdf-icon"></i>
+                        <span class="pdf-badge">${pdf.category}</span>
+                    </div>
+                    <div class="pdf-info">
+                        <h3 class="pdf-title" title="${pdf.title}">${pdf.title}</h3>
+                        <div class="pdf-meta">
+                            <span><i class="fas fa-file-alt"></i> ${pdf.pages} pages</span>
+                            <span><i class="fas fa-download"></i> ${pdf.downloads.toLocaleString()}</span>
+                        </div>
+                        <a href="${pdf.file}" class="pdf-download-btn" download>
+                            <i class="fas fa-download"></i> Download (${pdf.size})
+                        </a>
+                    </div>
+                `;
+                pdfGrid.appendChild(pdfCard);
+            });
+        }
+
+        // Category filter
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.textContent;
+                if (category === 'All') {
+                    renderPDFs();
+                } else {
+                    const filteredPDFs = pdfData.filter(pdf => pdf.category === category);
+                    renderPDFs(filteredPDFs);
+                }
+            });
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPDFs();
+            
+            // Initialize AdSense (replace with your actual AdSense code)
+            initializeAdSense();
+        });
+
+        // Function to initialize Google AdSense
+        function initializeAdSense() {
+            // Replace these with your actual AdSense ad unit IDs
+            const adUnitTop = 'YOUR_TOP_AD_UNIT_ID';
+            const adUnitSide = 'YOUR_SIDE_AD_UNIT_ID';
+            
+            // Top banner ad
+            const adBannerTop = document.getElementById('adBannerTop');
+            adBannerTop.innerHTML = `
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"></script>
+                <!-- Top Banner Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                     data-ad-slot="${adUnitTop}"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            `;
+            
+            // Side banner ad
+            const adBannerSide = document.getElementById('adBannerSide');
+            adBannerSide.innerHTML = `
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"></script>
+                <!-- Side Banner Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                     data-ad-slot="${adUnitSide}"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            `;
+        }
+    </script>
+</body>
+</html>
